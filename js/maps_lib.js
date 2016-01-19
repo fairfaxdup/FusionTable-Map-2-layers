@@ -26,23 +26,23 @@ var MapsLib = {
 
   //MODIFY the encrypted Table IDs of your Fusion Tables (found under File => About)
   //NOTE: numeric IDs will be depricated soon
-  fusionTableId:      "1WoxNIvjGQzQAk7B965hwVQOIl04f-Xn09JuTLu03", //Point data layer
+  fusionTableId:      "1kJw_x0AM88pHhtqYG9hw25HM_m6QUK6jgGmusT4p", //Point data layer
   
   polygon1TableID:    "1ceippR4giBiF-pT9PE1YAUvebFp6_NKvYriccYo", //Outline map layer of CT town boundaries
   polygon2TableID:    "1VopQGBhRKyyk25EIA5ptScvULxR68d43RhZ1ycM", //Thematic map layer of selected CT school districts
 
   //*MODIFY Fusion Tables Requirement* API key. found at https://code.google.com/apis/console/
   //*Important* this key is for demonstration purposes. please register your own.
-  googleApiKey:       "AIzaSyDIevSvpV-ONb4Pf15VUtwyr_zZa7ccwq4",
+  googleApiKey:       "AIzaSyAsyiYch9eH0ZvyxegDwylwh14qVj5M5-c",
 
   //MODIFY name of the location column in your Fusion Table.
   //NOTE: if your location column name has spaces in it, surround it with single quotes
   //example: locationColumn:     "'my location'",
   //if your Fusion Table has two-column lat/lng data, see https://support.google.com/fusiontables/answer/175922
-  locationColumn:     "Lat",
+  locationColumn:     "fulladdress",
 
-  map_centroid:       new google.maps.LatLng(41.7682,-72.684), //center that your map defaults to
-  locationScope:      "connecticut",      //geographical area appended to all address searches
+  map_centroid:       new google.maps.LatLng(44.977753,-93.265011), //center that your map defaults to
+  locationScope:      "minneapolis",      //geographical area appended to all address searches
   recordName:         "result",       //for showing number of results
   recordNamePlural:   "results",
 
@@ -137,11 +137,11 @@ var MapsLib = {
   //-----custom filters for point data layer
     //---MODIFY column header and values below to match your Google Fusion Table AND index.html
     //-- TEXTUAL OPTION to display legend and filter by non-numerical data in your table
-    var type_column = "'Program Type'";  // -- note use of single & double quotes for two-word column header
+    var type_column = "'market_status'";  // -- note use of single & double quotes for two-word column header
     var tempWhereClause = [];
-    if ( $("#cbType1").is(':checked')) tempWhereClause.push("Interdistrict");
-    if ( $("#cbType2").is(':checked')) tempWhereClause.push("District");
-    if ( $("#cbType3").is(':checked')) tempWhereClause.push("MorePreK");
+    if ( $("#cbType1").is(':checked')) tempWhereClause.push("class");
+    if ( $("#cbType2").is(':checked')) tempWhereClause.push("driveby");
+    if ( $("#cbType3").is(':checked')) tempWhereClause.push("wooing");
     whereClause += " AND " + type_column + " IN ('" + tempWhereClause.join("','") + "')";
 
     //-- NUMERICAL OPTION - to display and filter a column of numerical data in your table, use this instead
