@@ -137,11 +137,11 @@ var MapsLib = {
   //-----custom filters for point data layer
     //---MODIFY column header and values below to match your Google Fusion Table AND index.html
     //-- TEXTUAL OPTION to display legend and filter by non-numerical data in your table
-    var type_column = "'market_status'";  // -- note use of single & double quotes for two-word column header
+    var type_column = "'status'";  // -- note use of single & double quotes for two-word column header
     var tempWhereClause = [];
-    if ( $("#cbType1").is(':checked')) tempWhereClause.push("class");
-    if ( $("#cbType2").is(':checked')) tempWhereClause.push("driveby");
-    if ( $("#cbType3").is(':checked')) tempWhereClause.push("wooing");
+    if ( $("#cbType1").is(':checked')) tempWhereClause.push("'Agreement Sent'");
+    if ( $("#cbType2").is(':checked')) tempWhereClause.push("LIBRARY");
+    if ( $("#cbType3").is(':checked')) tempWhereClause.push("Prospect");
     whereClause += " AND " + type_column + " IN ('" + tempWhereClause.join("','") + "')";
 
     //-- NUMERICAL OPTION - to display and filter a column of numerical data in your table, use this instead
