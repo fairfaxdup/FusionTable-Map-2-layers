@@ -5,10 +5,10 @@ Use this template if you wish to create a Search-and-Filter map that turns on/of
 
 ##Demos
 Toggle display between map view and sortable list view
-- http://jackdougherty.github.io/FusionTable-Map-2-layers
+- http://fairfaxdup.github.io/FusionTable-Map-2-layers
 
 Display both map view and sortable list
-- http://jackdougherty.github.io/FusionTable-Map-2-layers/index_both.html
+- http://fairfaxdup.github.io/FusionTable-Map-2-layers/index_both.html
 
 ##Create your own with this template:
 
